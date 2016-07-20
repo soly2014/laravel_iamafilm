@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/setting', function () {
     return view('setting');
 });
 Route::get('/profile', function () {

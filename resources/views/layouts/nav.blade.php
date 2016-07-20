@@ -16,7 +16,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" > <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
+                    <li><a id="modal-684021" href="#modal-container-684021" role="button" data-toggle="modal" > <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign up</a></li>
                     <li><a class="popup-with-move-anim" href="#test-form"><i class="fa fa-sign-in" aria-hidden="true"></i> login</a></li>
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="assets/images/user.png">User Name <span class="caret"></span></a>
@@ -33,3 +33,83 @@
         </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+
+
+            <!-- sign up modal -->
+            <!-- start modal -->
+            <div class="modal fade" id="modal-container-684021" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                             
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                ×
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                
+
+                                   <ul  class="nav nav-pills">
+                                        <li class="active">
+                                    <a  href="#1b" data-toggle="tab">Director</a>
+                                        </li>
+                                        <li><a href="#2b" data-toggle="tab">Festival</a>
+                                        </li>
+                                      
+                                    </ul>
+
+                               <div class="tab-content clearfix">
+
+
+                                        <!-- director tab  -->
+
+                                          <div class="tab-pane active" id="1b"><br><br>
+
+                                                <form role="form">
+                                                        <div class="form-group">
+                                                             
+                                                        <input type="email" placeholder="type your mail" class="form-control" id="exampleInputEmail1" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="password" placeholder="type your password" class="form-control" id="exampleInputPassword1" />
+                                                        </div>
+                                                       
+                                                        <div class="checkbox">
+                                                             
+                                                            <label>
+                                                                <input type="checkbox" /> Check me out
+                                                            </label>
+                                                        </div> 
+                                                        
+                                              
+                                               </form>
+
+                                          </div>
+
+
+                                         <!-- festival tab -->   
+                                            <div class="tab-pane" id="2b">
+                                               <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+                                            </div>
+                                    
+                                </div>
+                                        </h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                         
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                                            Close
+                                        </button> 
+                                        <button type="button" class="btn btn-primary">
+                                            Save changes
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+
+                        <!-- end sign up modal -->
+                        
+
+
