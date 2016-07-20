@@ -1,0 +1,436 @@
+/*--
+    designer : Hesham shawky
+    URL: http://heshamshawky.com
+    Email: heshamwebdeve@gmail.com
+--*/
+
+/* fonts */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700);
+html,
+body {
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.7;
+    height: 100%;
+/*    background-image: url('../images/body.jpg');*/
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+ul {
+    list-style-type: none;
+}
+/*-- header --*/
+
+.header {
+    position: relative;
+    height: 500px;
+    background-image: url('../images/global_silla.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container-respon {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+
+
+.p-overlay {
+    background: url('../images/hero-section/pattern-overlay.png') repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.or p {
+    margin: 100px auto;
+    font-weight: 100;
+}
+/*-- form --*/
+
+.form-box {
+    overflow: hidden;
+    background: #eee;
+    margin: 0 35px;
+    margin: 0px auto 5px;
+    border-radius: 10px;
+    border-bottom: 5px solid #9E9E9E;
+}
+
+.forms {
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+}
+
+.form-head {
+    overflow: hidden;
+    margin: 0 auto 5px;
+    padding: 10px 20px;
+    background: #FF2020;
+}
+
+.form-head .fa {
+    font-size: 67px;
+    color: #272626;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background: #EEE;
+    text-align: center;
+    border-radius: 50%;
+    /* box-shadow: 0 0 10px #FF8181; */
+    margin: 5px auto;
+    border: 3px solid #EF4B4B;
+}
+
+.form-head h2 {
+    color: #E8E8E8;
+    padding: 10px 0;
+}
+
+
+.form-body {
+    overflow: hidden;
+    padding: 20px 20px;
+}
+
+
+.form-box .btn {
+    color: #fff
+}
+
+form#test-form .fa {
+    color: #222;
+    font-size: 21px;
+    margin: 0 2px;
+}
+
+/*-- navigation --*/
+
+.navbar-default {
+    background-color: #222;
+    border: 0;
+    border-radius: 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #E0E0E0;
+    border-left: 1px solid #222;
+    text-transform: uppercase;
+    background: #333;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #FFF;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFF;
+    text-transform: capitalize;
+}
+
+.navbar-default .fa {
+    font-size: 18px;
+}
+
+/* Styles for dialog window */
+#small-dialog {
+    background: white;
+    padding: 20px 30px;
+    text-align: left;
+    max-width: 400px;
+    margin: 40px auto;
+    position: relative;
+}
+
+#test-form {
+    max-width: 475px;
+    color: #222
+}
+
+.angular-google-map-container {
+  height: 600px;
+}
+
+.padding {
+    padding: 50px 0
+}
+
+.tap ul, .profile-tabs {
+    list-style: none;
+    padding: 0;
+}
+
+.tabs > li, .profile-tabs li {
+    background: #222222;
+    margin: 10px auto;
+    text-align: center;
+    padding: 20px 0;
+    color: #FFFFFF;
+    /* border-radius: 5px; */
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.box {
+    overflow: hidden;
+    padding: 10px;
+    background: #222;
+    border-bottom: 3px solid #17A99F;
+    border-radius: 0 0 5px 5px;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    color: #fff;
+}
+
+.festival-clolr-box {
+    background: #ddd;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.festival-clolr-box {
+    background: #333;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.festival-clolr-box span {
+    width: 10px;
+    height: 10px;
+    background: #000;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.festival-box,
+.film-box {
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+    border-bottom: 1px dashed #fff;
+}
+
+.submission,
+.deadline,
+.closed {
+    position: absolute;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+}
+
+.submission {
+    background: #00FFA1;
+}
+
+.deadline {
+    background: #FFD400;
+}
+
+.closed {
+    background: #ff2525;
+}
+
+.dropdown .btn-default {
+    width: 95%;
+    text-align: left;
+}
+
+#films {
+    display: none;
+}
+
+.tabs .active,
+.profile-tabs .active    {
+    background: #121212;
+}
+
+.festival-clolr-box {
+    background: #333;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.films-filter {
+     padding: 3px;
+    background: #333;
+    overflow: hidden;
+}
+
+.films-filter span {
+    padding: 10px;
+    display: block;
+    border-right: 1px solid #222;
+    background: #131313;
+    float: left;
+    cursor: pointer;
+    width: 50%;
+    text-align: center;
+}
+
+.dropdpwn span {
+    margin: 10px auto;
+}
+
+.films-filter span:hover {
+    background: #222;
+}
+
+.films-filter span.active {
+    background: #222;
+}
+
+.navbar-default .navbar-brand{
+     padding: 0
+}
+.navbar-brand > img {
+    display: block;
+    max-width: 200px;
+}
+
+.festival-filter span {
+    width: 20%;
+}
+
+.nav > li > a > img {
+    background: #FFD400;
+    border: 1px solid #ddd;
+    margin: 0 15px 0 0;
+    width: 50px;
+    height: 50px;
+}
+
+.profile-info {
+    overflow: hidden
+}
+
+.profile-info img {
+    max-width: 175px;
+    max-height: 175px;
+    background: #151515;
+}
+
+.profile-info li {
+    display: inline-block;
+}
+
+.profile-info li .fa {
+    display: inline-block;
+    font-size: 30px;
+    margin-right: 8px;
+        color: #222;
+}
+
+.video-thu img {
+    border: 1px solid #999;
+    max-width: 150px;
+    padding: 10px;
+    max-height: 150px;
+}
+
+#submit-video
+,#coins,#upload-film,#myfilm {
+    display: none;
+}
+
+.forget-pass {
+    display: none
+}
+
+.search-fest {
+    position: relative;
+}
+
+.search-fest .fa {
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    color: #222;
+}
+
+.profile-tabs .active {
+    background: #EEEEEE;
+    color: #222;
+    border: 2px solid #000000;
+}
+
+footer {
+    padding-bottom: 60px;
+}
+
+
+/* Tabs panel */
+.tabbable-panel {
+  border:1px solid #eee;
+  padding: 10px;
+}
+
+/* Default mode */
+.tabbable-line > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tabbable-line > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tabbable-line > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #737373;
+}
+.tabbable-line > .nav-tabs > li > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-bottom: 4px solid #fbcdcf;
+}
+.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+.tabbable-line > .nav-tabs > li.active {
+  border-bottom: 4px solid #f3565d;
+  position: relative;
+}
+.tabbable-line > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
+}
+

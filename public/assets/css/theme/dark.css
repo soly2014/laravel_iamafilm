@@ -1,0 +1,36 @@
+body {
+    background: #222;
+}
+
+.box {
+    background: #eee;
+    border-bottom: 3px solid #17A99F;
+    color: #222;
+}
+
+.festival-clolr-box {
+    background: #D0D0D0;
+}
+
+.films-filter {
+    background: #D0D0D0;
+}
+
+.films-filter span {
+    border-right: 1px solid #fff;
+    background: #C3C3C3;
+}
+
+.films-filter span.active {
+    background: #00ADFF;
+    color: #fff;
+}
+
+.festival-box, .film-box {
+    border-bottom: 1px dashed #C3C3C3;
+}
+
+.films-filter span:hover {
+    background: #00ADFF;
+    color: #fff;
+}
