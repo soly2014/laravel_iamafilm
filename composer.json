@@ -17,6 +17,7 @@
     },
     "autoload": {
         "classmap": [
+             "app/Http/Controllers/Controller.php",
             "database"
         ],
         "psr-4": {

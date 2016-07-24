@@ -37,8 +37,8 @@
 
             <!-- sign up modal -->
             <!-- start modal -->
-            <div class="modal fade" id="modal-container-684021" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+            <div class=" modal fade " id="modal-container-684021" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-admin">
                     <div class="modal-content">
                         <div class="modal-header">
                              
@@ -48,7 +48,7 @@
                             <h4 class="modal-title" id="myModalLabel">
                 
 
-                                   <ul  class="nav nav-pills">
+                                   <ul  class="nav nav-tabs">
                                         <li class="active">
                                     <a  href="#1b" data-toggle="tab">Director</a>
                                         </li>
@@ -64,25 +64,178 @@
 
                                           <div class="tab-pane active" id="1b"><br><br>
 
-                                                <form role="form">
-                                                        <div class="form-group">
-                                                             
-                                                        <input type="email" placeholder="type your mail" class="form-control" id="exampleInputEmail1" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="password" placeholder="type your password" class="form-control" id="exampleInputPassword1" />
-                                                        </div>
-                                                       
-                                                        <div class="checkbox">
-                                                             
-                                                            <label>
-                                                                <input type="checkbox" /> Check me out
-                                                            </label>
-                                                        </div> 
-                                                        
-                                              
-                                               </form>
+                                            <div class="row">
+                                                <div class="col-md-6" style="padding:29px;">         
+                                                                                                
+                                        <form role="form" action="/signup" method="post" class="form-horizontal">
+                                                                     {{ csrf_field() }}   
 
+                                                        <div class="form-group {{ $errors->has('email')?'has-error':''}}">
+                                                                        <label for="exampleInputEmail1">
+                                                                            Email address
+                                                                        </label>
+                                                                        <input type="email" class="form-control " name="email" id="inputError"/>
+                                                                        @if($errors->has('email'))
+                                                                     <span class="help-block">Please correct the email</span>
+                                                                        @endif
+
+                                                                    </div>
+                                                           <div class="form-group {{ $errors->has('password')?'has-error':''}}">
+                                                                         
+                                                                        <label for="exampleInputPassword1">
+                                                                            Password
+                                                                        </label>
+                                                                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" />
+                                                                       @if($errors->has('password'))
+                                                                     <span class="help-block">Please correct the password</span>
+                                                                        @endif
+
+                                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6" style="padding:15px;">
+
+                                                                <div class="form-group" style="margin-top:92px;">
+                                                                     
+                                                                </div>
+                                                                <div class="form-group {{ $errors->has('password_confirmation')?'has-error':''}}">
+                                                                     
+                                                                    <label for="exampleInputPassword1">
+                                                                        Repeat Password
+                                                                    </label>
+                                                                    <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation" />
+                                                                    @if($errors->has('password_confirmation'))
+                                                                     <span class="help-block">Please correct the password_confirmation</span>
+                                                                        @endif
+                                                                </div>
+
+                                                  
+
+                                                </div>
+                                            </div>
+
+                                        <div class="row">
+                                                <div class="col-md-6" style="padding:15px;">                                                        
+                                                  
+                                                            <div class="form-group {{ $errors->has('fname')?'has-error':''}}">
+                                                                         
+                                                                        <label for="exampleInputEmail1">
+                                                                            First Name
+                                                                        </label>
+                                                                        <input type="text" class="form-control" name="fname" />
+                                                                        @if($errors->has('fname'))
+                                                                     <span class="help-block">Please correct the First Name</span>
+                                                                        @endif
+                                                                    </div>
+                                                                
+                                                            <div class="form-group {{ $errors->has('dob')?'has-error':''}}">
+                                                
+                                                                    <label for="exampleInputEmail1">
+                                                                            Birth Date
+                                                                        </label>
+                                                                    <div class='input-group date' id='datetimepicker1'>
+                                                
+                                                                        <input type='text' class="form-control" name="dob" />
+                                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                                                        </span></div>
+                                                                        @if($errors->has('dob'))
+                                                                     <span class="help-block">Please correct the Date Of Birth</span>
+                                                                        @endif
+                                                                    
+                                                                </div>
+
+
+                                                                <div class="form-group">
+                                                                      <div class="form-group">
+                                                                         
+                                                                        <label for="exampleInputEmail1">
+                                                                            Language
+                                                                        </label>
+                                                                        <select class="form-control" name="lang">
+                                                                            @foreach(Country::langList() as $lang)
+                                                                            <option>{{ $lang }}</option>
+                                                                            @endforeach
+                                                                        </select> 
+                                                                        
+                                                                    </div>   
+                                                                </div>
+                                                            
+
+                                                </div>
+                                                <div class="col-md-6" style="padding:15px;">
+
+                                                                <div class="form-group">
+                                                                      <div class="form-group {{ $errors->has('lname')?'has-error':''}}">
+                                                                         
+                                                                        <label for="exampleInputEmail1">
+                                                                            Last Name
+                                                                        </label>
+                                                                        <input type="text" class="form-control" name="lname" />
+                                                                        @if($errors->has('lname'))
+                                                                     <span class="help-block">Please correct the LAst Name</span>
+                                                                        @endif
+                                                                    </div>   
+                                                                </div>
+                                                                <div class="form-group {{ $errors->has('phone')?'has-error':''}}">
+                                                                     
+                                                                    <label for="exampleInputPassword1">
+                                                                        Phone Number
+                                                                    </label>
+                                                                    <input type="tel" name="phone" class=".iti-flag form-control" id="phone" placeholder="Add Your Phone Number" required>@if($errors->has('phone'))
+                                                                     <span class="help-block">Please correct the Phone Number</span>
+                                                                        @endif<br>
+
+                                                                </div>
+
+
+                                                                <div class="form-group">
+                                                                      <div class="form-group">
+                                                                         
+                                                                        <label for="exampleInputEmail1">
+                                                                            Nationality
+                                                                        </label>
+                                                                        <select class="form-control" name="nation">
+                                                                            @foreach(Country::countryList() as $count)
+                                                                            <option>{{ $count }}</option>
+                                                                            @endforeach
+                                                                        </select> 
+                                                                        
+                                                                    </div>   
+                                                                </div>
+                                                  
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    
+                                                <div class="checkbox">
+                         
+                                                     <label>
+                                                          <input type="checkbox" name="accept_policy" /> I ACCEPT THE TERMS OF USE, PRIVACY POLICY & REFUNDS POLICY
+
+                                                      </label>
+                                                </div> 
+                                                <div class="checkbox">
+                         
+                                                     <label>
+                                                          <input type="checkbox" name="subscribed" /> SUSCRIBE TO OUR BULLETIN
+
+                                                      </label>
+                                                </div> 
+                                               <div class="checkbox">
+                         
+                                                     <label>
+                                                          <input type="checkbox" name="confirmed" /> CONFIRMATION E-MAIL AFTER EACH SUBMISSION
+
+                                                      </label>
+                                                </div> 
+                                                <button type="submit" class="btn btn-success">Submit</button>
+                                                </form>
+
+                                                </div>
+                                            </div>
                                           </div>
 
 
@@ -99,10 +252,7 @@
                                         <button type="button" class="btn btn-default" data-dismiss="modal">
                                             Close
                                         </button> 
-                                        <button type="button" class="btn btn-primary">
-                                            Save changes
-                                        </button>
-                                    </div>
+                                                                            </div>
                                 </div>
                                 
                             </div>
@@ -110,6 +260,56 @@
                         </div>
 
                         <!-- end sign up modal -->
+
+                        <script type="text/javascript">
+                            
+                             $(function () {
+   var bindDatePicker = function() {
+        $(".date").datetimepicker({
+        format:'YYYY-MM-DD',
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-arrow-up",
+                down: "fa fa-arrow-down"
+            }
+        }).find('input:first').on("blur",function () {
+            // check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+            // update the format if it's yyyy-mm-dd
+            var date = parseDate($(this).val());
+
+            if (! isValidDate(date)) {
+                //create date based on momentjs (we have that)
+                date = moment().format('YYYY-MM-DD');
+            }
+
+            $(this).val(date)
+        });
+    }
+   
+   var isValidDate = function(value, format) {
+        format = format || false;
+        // lets parse the date to the best of our knowledge
+        if (format) {
+            value = parseDate(value);
+        }
+
+        var timestamp = Date.parse(value);
+
+        return isNaN(timestamp) == false;
+   }
+   
+   var parseDate = function(value) {
+        var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+        if (m)
+            value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+
+        return value;
+   }
+   
+   bindDatePicker();
+ });
+                        </script>
                         
 
 

@@ -434,3 +434,25 @@ footer {
   padding-bottom: 0;
 }
 
+body .modal-admin {
+    /* new custom width */
+  width: 70%; /* desired relative width */
+  left: 1%; /* (100%-width)/2 */
+  /* place center */
+  margin-left:auto;
+  margin-right:auto; 
+  padding: 0 30px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+}
+
+hr {
+  border:none;
+  border-top:2px dotted  #a59a9a;
+  height:1px;
+  width:90%;
+}
+
+.intl-tel-input{
+
+        margin-bottom: -25px;
+}

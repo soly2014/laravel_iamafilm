@@ -17,6 +17,13 @@ Route::get('/setting', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
-Route::get('/index', function () {
-    return view('index');
-});
+
+
+Route::get('/index','HomeController@index');
+
+
+/* sign up */
+Route::post('/signup','HomeController@signUp');
+
+
+

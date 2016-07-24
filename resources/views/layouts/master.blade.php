@@ -22,12 +22,29 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
+    <link href="{{ asset('assets/css/intlTelInput.css') }}" rel="stylesheet">
 
     <!---- syles ---->
     <link rel="stylesheet" href="{{ url('/') }}/assets/css/bootstrap.css">
     <link rel="stylesheet" href="{{ url('/') }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ url('/') }}/assets/css/magnific-popup.css">
     <link rel="stylesheet" href="{{ url('/') }}/assets/css/theme/dark.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <style type="text/css">
+              
+              .iti-flag {
+                background-image: url("{{ asset('assets/images/flags.png') }}");
+                        }
+
+              .phone{
+
+                display: block !important;
+              }          
+
+    </style>
+
     <!---- syles ---->
     @yield('header.style')
 </head>
@@ -71,6 +88,47 @@
     <!-- appJs -->
     <script src=" {{ url('/') }}/assets/app/app.js"></script>
 
+    <!-- moment  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+
+    <!-- time picker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- input phone -->
+    <script src="{{ asset('assets/js/intlTelInput.js') }}"></script>
+
+
+    <script type="text/javascript">
+      $("#phone").intlTelInput();
+       $(".intl-tel-input .country-list").width($('.form-control').width()*3);
+
+       console.log($('.sign-up-input').width());
+
+
+    </script>
+     <script>
+
+               $(function(){
+
+
+               $("#phone").click(function() {
+
+               var phone = $("#phone").intlTelInput("getSelectedCountryData").name+' '+$("#phone").intlTelInput("getSelectedCountryData").                                                   dialCode;
+               $("#country").val(phone);
+
+               console.log(phone);
+
+
+               });
+
+                /* ajaxForm is a function existed in new plugin called  */
+                /* "http://malsup.github.com/jquery.form.js" */
+                /* use it while uploading image */
+                
+            });
+
+
+    </script>
 
 
     <!---- JavaScript Files ---->
