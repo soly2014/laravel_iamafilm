@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->date('dob');
-            $table->bigInteger('phone');
+            $table->bigInteger('phones');
             $table->string('nation');
             $table->string('lang');
             $table->boolean('accept_policy');

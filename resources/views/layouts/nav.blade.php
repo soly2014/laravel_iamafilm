@@ -63,18 +63,17 @@
                                         <!-- director tab  -->
 
                                           <div class="tab-pane active" id="1b"><br><br>
-
                                             <div class="row">
-                                                <div class="col-md-6" style="padding:29px;">         
-                                                                                                
-                                        <form role="form" action="/signup" method="post" class="form-horizontal">
+                                                <div class="col-md-6" style="padding:29px;"> 
+
+                                        <form role="form" action="/signup" method="post" class="form-horizontal" id="sendform">
                                                                      {{ csrf_field() }}   
 
                                                         <div class="form-group {{ $errors->has('email')?'has-error':''}}">
                                                                         <label for="exampleInputEmail1">
                                                                             Email address
                                                                         </label>
-                                                                        <input type="email" class="form-control " name="email" id="inputError"/>
+                                                                        <input type="email" class="form-control" value="{{ old('email') }}" name="email" id="email"/>
                                                                         @if($errors->has('email'))
                                                                      <span class="help-block">Please correct the email</span>
                                                                         @endif
@@ -85,7 +84,7 @@
                                                                         <label for="exampleInputPassword1">
                                                                             Password
                                                                         </label>
-                                                                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" />
+                                                                        <input type="password" class="form-control" id="password" name="password" />
                                                                        @if($errors->has('password'))
                                                                      <span class="help-block">Please correct the password</span>
                                                                         @endif
@@ -103,7 +102,7 @@
                                                                     <label for="exampleInputPassword1">
                                                                         Repeat Password
                                                                     </label>
-                                                                    <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation" />
+                                                                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" />
                                                                     @if($errors->has('password_confirmation'))
                                                                      <span class="help-block">Please correct the password_confirmation</span>
                                                                         @endif
@@ -122,7 +121,7 @@
                                                                         <label for="exampleInputEmail1">
                                                                             First Name
                                                                         </label>
-                                                                        <input type="text" class="form-control" name="fname" />
+                                                                        <input type="text" value="{{ old('fname') }}" class="form-control" name="fname" id="fname" />
                                                                         @if($errors->has('fname'))
                                                                      <span class="help-block">Please correct the First Name</span>
                                                                         @endif
@@ -135,7 +134,7 @@
                                                                         </label>
                                                                     <div class='input-group date' id='datetimepicker1'>
                                                 
-                                                                        <input type='text' class="form-control" name="dob" />
+                                                                        <input type='text' value="{{ old('dob') }}" class="form-control" name="dob" id="dob" />
                                                                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                                                         </span></div>
                                                                         @if($errors->has('dob'))
@@ -151,7 +150,7 @@
                                                                         <label for="exampleInputEmail1">
                                                                             Language
                                                                         </label>
-                                                                        <select class="form-control" name="lang">
+                                                                        <select class="form-control" name="lang" id="lang">
                                                                             @foreach(Country::langList() as $lang)
                                                                             <option>{{ $lang }}</option>
                                                                             @endforeach
@@ -170,7 +169,7 @@
                                                                         <label for="exampleInputEmail1">
                                                                             Last Name
                                                                         </label>
-                                                                        <input type="text" class="form-control" name="lname" />
+                                                                        <input type="text" value="{{ old('lname') }}" class="form-control" name="lname" id="lname" />
                                                                         @if($errors->has('lname'))
                                                                      <span class="help-block">Please correct the LAst Name</span>
                                                                         @endif
@@ -181,7 +180,8 @@
                                                                     <label for="exampleInputPassword1">
                                                                         Phone Number
                                                                     </label>
-                                                                    <input type="tel" name="phone" class=".iti-flag form-control" id="phone" placeholder="Add Your Phone Number" required>@if($errors->has('phone'))
+                                                                    <input type="tel" name="phones" class=".iti-flag form-control" id="phone" value="{{ old('phones') }}" placeholder="Add Your Phone Number" >
+                                                                    @if($errors->has('phones'))
                                                                      <span class="help-block">Please correct the Phone Number</span>
                                                                         @endif<br>
 
@@ -194,7 +194,7 @@
                                                                         <label for="exampleInputEmail1">
                                                                             Nationality
                                                                         </label>
-                                                                        <select class="form-control" name="nation">
+                                                                        <select class="form-control" name="nation" id="nation">
                                                                             @foreach(Country::countryList() as $count)
                                                                             <option>{{ $count }}</option>
                                                                             @endforeach
@@ -213,25 +213,30 @@
                                                 <div class="checkbox">
                          
                                                      <label>
-                                                          <input type="checkbox" name="accept_policy" /> I ACCEPT THE TERMS OF USE, PRIVACY POLICY & REFUNDS POLICY
+                                                        <input type="checkbox" name="accept_policy" id="accept_policy" value="0" /> I ACCEPT THE TERMS OF USE, PRIVACY POLICY & REFUNDS POLICY
 
                                                       </label>
                                                 </div> 
                                                 <div class="checkbox">
                          
                                                      <label>
-                                                          <input type="checkbox" name="subscribed" /> SUSCRIBE TO OUR BULLETIN
+                                                          <input type="checkbox" name="subscribed" id="subscribed" /> SUSCRIBE TO OUR BULLETIN
 
                                                       </label>
                                                 </div> 
                                                <div class="checkbox">
                          
                                                      <label>
-                                                          <input type="checkbox" name="confirmed" /> CONFIRMATION E-MAIL AFTER EACH SUBMISSION
+                                                          <input type="checkbox" name="confirmed" id="confirmed" value="0" /> CONFIRMATION E-MAIL AFTER EACH SUBMISSION
 
                                                       </label>
                                                 </div> 
-                                                <button type="submit" class="btn btn-success">Submit</button>
+                                                                                          <div class="row">
+                                              <div class="col-md-12" id="form-errors"></div>
+                                          </div>                                                     
+
+                                                <br>
+                                                <button type="submit" class="btn btn-success">&nbsp; Submit &nbsp;</button>
                                                 </form>
 
                                                 </div>
@@ -264,52 +269,156 @@
                         <script type="text/javascript">
                             
                              $(function () {
-   var bindDatePicker = function() {
-        $(".date").datetimepicker({
-        format:'YYYY-MM-DD',
-            icons: {
-                time: "fa fa-clock-o",
-                date: "fa fa-calendar",
-                up: "fa fa-arrow-up",
-                down: "fa fa-arrow-down"
-            }
-        }).find('input:first').on("blur",function () {
-            // check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
-            // update the format if it's yyyy-mm-dd
-            var date = parseDate($(this).val());
+                                   var bindDatePicker = function() {
+                                        $(".date").datetimepicker({
+                                        format:'YYYY-MM-DD',
+                                            icons: {
+                                                time: "fa fa-clock-o",
+                                                date: "fa fa-calendar",
+                                                up: "fa fa-arrow-up",
+                                                down: "fa fa-arrow-down"
+                                            }
+                                        }).find('input:first').on("blur",function () {
+                                            // check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+                                            // update the format if it's yyyy-mm-dd
+                                            var date = parseDate($(this).val());
 
-            if (! isValidDate(date)) {
-                //create date based on momentjs (we have that)
-                date = moment().format('YYYY-MM-DD');
-            }
+                                            if (! isValidDate(date)) {
+                                                //create date based on momentjs (we have that)
+                                                date = moment().format('YYYY-MM-DD');
+                                            }
 
-            $(this).val(date)
-        });
-    }
-   
-   var isValidDate = function(value, format) {
-        format = format || false;
-        // lets parse the date to the best of our knowledge
-        if (format) {
-            value = parseDate(value);
-        }
+                                            $(this).val(date)
+                                        });
+                                    }
+                                   
+                                   var isValidDate = function(value, format) {
+                                        format = format || false;
+                                        // lets parse the date to the best of our knowledge
+                                        if (format) {
+                                            value = parseDate(value);
+                                        }
 
-        var timestamp = Date.parse(value);
+                                        var timestamp = Date.parse(value);
 
-        return isNaN(timestamp) == false;
-   }
-   
-   var parseDate = function(value) {
-        var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
-        if (m)
-            value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+                                        return isNaN(timestamp) == false;
+                                   }
+                                   
+                                   var parseDate = function(value) {
+                                        var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+                                        if (m)
+                                            value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
 
-        return value;
-   }
-   
-   bindDatePicker();
- });
+                                        return value;
+                                   }
+                                   
+                                   bindDatePicker();
+                                 });
                         </script>
+
+                        <!-- ajax form -->
+
+
+                       <script type="text/javascript">
+                          
+                    
+                    $(document).ready(function () {
+
+
+                        $('#sendform').submit(function(event) {
+
+                                        event.preventDefault();
+
+                                        var url           = $('#sendform').attr('action');
+                                        var email         = $('#email').val();
+                                        var fname         = $('#fname').val();
+                                        var lname         = $('#lname').val();
+                                        var password         = $('#password').val();
+                                        var password_confirmation         = $('#password_confirmation').val();
+                                        var dob           = $('#dob').val();
+                                        var phones        = $('#phone').val();
+                                        var nation        = $('#nation').val();
+                                        var lang              = $('#lang').val();
+                                        var accept_policy     = $('#accept_policy').val();
+                                        var subscribed        = $('#subscribed').val();
+                                        var confirmed         = $('#confirmed').val();
+                                       
+
+                                       if ($('[name="subscribed"]').is(':checked')){
+
+                                        var subscribed        = 1;
+
+                                       }else{
+
+                                        subscribed = 0;
+
+                                       }
+
+
+                                       if ($('[name="accept_policy"]').is(':checked')){
+
+                                        var accept_policy        = 1;
+
+                                       }else{
+
+                                        accept_policy = 0;
+
+                                       }
+
+
+                                       if ($('[name="confirmed"]').is(':checked')){
+
+                                        var confirmed        = 1;
+
+                                       }else{
+
+                                        confirmed = 0;
+
+                                       }
+
+
+                                        $.ajax({
+                                            url: url,
+                                            type: 'post',
+                                            data:{'email':email,'fname':fname,'lname':lname,'dob':dob,'phones':phones,'nation':nation,'lang':lang,'accept_policy':accept_policy,'subscribed':subscribed,'confirmed':confirmed,'password':password,'password_confirmation':password_confirmation},
+                                            dataType: "json",
+
+                                            success:function(data) {
+                                               
+                                               $('#modal-container-684021').modal('toggle');
+
+                                            
+                                            },
+                                            error:function(error) {
+
+                                                    //process validation errors here.
+                                                    var errors = error.responseJSON; //this will get the errors response data.
+                                                    //show them somewhere in the markup
+                                                    //e.g
+                                                    errorsHtml = '<div class="alert alert-danger"><ul>';
+
+                                                    $.each( errors, function( key, value ) {
+                                                        errorsHtml += '<li>' + value[0] + '</li>'; //showing only the first error.
+                                                    });
+                                                    errorsHtml += '</ul></div>';
+                                                        
+                                                    $( '#form-errors' ).html( errorsHtml ); //appending to a <div id="form-errors"></div> inside form
+                                                   // alert(errorsHtml); //appending to a <div id="form-errors"></div> inside form
+                                                                                                        
+
+
+                                            
+                                                 
+                                           
+                                            }
+                                        });
+
+                         });
+
+                 });       
+
+
+                      </script>
                         
 
 
