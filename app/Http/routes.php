@@ -19,7 +19,7 @@ Route::get('/profile', function () {
 });
 
 
-Route::get('/index','HomeController@index');
+Route::get('/','HomeController@index');
 
 
 /* sign up */
