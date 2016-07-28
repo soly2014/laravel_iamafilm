@@ -214,10 +214,10 @@
                                 <th>Director Name</th>
                                 <th>Country</th>
                             </tr>
-                            <tr class="text-center" data-ng-repeat="director in directorList">
-                                <td><img class="img-circle" width="50" height="50" src="@{{director.profilePic}}"></td>
-                                <td>@{{director.name}}</td>
-                                <td>@{{director.country}} </td>
+                            <tr class="text-center" >
+                                <td><img class="img-circle " id="dirImg" width="50" height="50" src=""></td>
+                                <td id="dirName"></td>
+                                <td id="dirCountry"> </td>
                             </tr>
                         </table>
 
